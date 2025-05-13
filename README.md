@@ -51,5 +51,5 @@ cd EmpleadoApp
 ## 👤 Autor
 
 **Carlos Mauricio Borja Mora - CMauroBorja**  
-Desarrollador Backend apasionado por .NET, MySQL y APIs REST.  
+Desarrollador Backend .NET, MySQL y APIs REST.  
 GitHub: [https://github.com/CMauroBorja](https://github.com/tu-usuario)
