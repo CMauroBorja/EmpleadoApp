@@ -43,5 +43,13 @@ Este proyecto fue creado como práctica técnica para entrevistas o pruebas de c
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/EmpleadoApp.git
+git clone https://github.com/CMauroBorja/EmpleadoApp.git
 cd EmpleadoApp
+
+---
+
+## 👤 Autor
+
+**Carlos Mauricio Borja Mora - CMauroBorja**  
+Desarrollador Backend apasionado por .NET, MySQL y APIs REST.  
+GitHub: [https://github.com/CMauroBorja](https://github.com/tu-usuario)
