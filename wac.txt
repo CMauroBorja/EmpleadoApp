@@ -1,0 +1,68 @@
+crear proyecto
+asp.net web api
+descargar paquete nuget
+-core
+-tools
+-sqlserver
+crear cadena conexion appsettings
+"ConnectionStrings"{
+"DefaultConnecion":"server=;database=;user id=;password=;Trusted_Connection=true;TustServerCertificate=true;"
+}
+comandos nuget
+Scaffold-DbContext "server=;database=;user id=;password=;Trusted_Connection=true;TustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer -Tables [nombretabla]
+program.cs
+--build.service.adddbcontext<[micontext]>
+	(options => options.usesqlserver(builder.
+	configuration.getconnectionstring("[miconexion]")));
+controlador
+-[Route("api/[controller]")]
+-[apicontroller]
+------
+-private readonly [micontexto]:controller
+public [micontroller]([micontexto] context)
+{_context = context;}
+
+[HttpGet("obtener")]
+public IActionResult obtener()
+{
+    var barrio = _context.Barrios;
+    return Ok(barrio);
+}
+
+[HttpGet("obtenerId")]
+public IActionResult obtenerId(int IdPais, int IdDepartamento, int IdCiudad, int IdBarrio)
+{
+    var barrio = _context.Barrios.Find(IdPais, IdDepartamento, IdCiudad, IdBarrio);
+    return Ok(barrio);
+}
+
+[HttpPost("Crear")]
+public IActionResult postBarriosId(Barrio idpost)
+{
+    _context.Barrios.Add(idpost);
+    _context.SaveChanges();
+    return Ok("Barrio creado");
+}
+
+[HttpPut("actualizar")]
+public IActionResult putBarrio(Barrio idput)
+{
+    _context.Barrios.Update(idput);
+    _context.SaveChanges();
+    return Ok("Actualizo");
+}
+
+[HttpDelete("Eliminar")]
+public IActionResult deleteBarrio(Barrio ideliminar)
+{
+    var resultado = _context.Barrios.Find(ideliminar.IdPais, ideliminar.IdDepartamento, ideliminar.IdCiudad, ideliminar.IdBarrio);
+    if (resultado == null)
+    {
+        return NotFound();
+    }
+    _context.Barrios.Remove(resultado);
+    _context.SaveChanges();
+    return Ok("registro eliminado");
+}
+
+**en mi modelo poner [Key] a las PK
